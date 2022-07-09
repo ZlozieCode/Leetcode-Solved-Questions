@@ -48,16 +48,16 @@ public:
         
         if(prev!=NULL)prev->next=rev;
         
-        curr=rev;
+        curr=rev; //store reverse linkedlist
         while(rev->next!=NULL){
             rev=rev->next;
         }
         
         rev->next=rest;
         
-        if(left==1)return curr;
+        if(left==1)return curr; //reversed likedlist from begining till right and add rest
         
-        return head;
+        return head; //add prefix + reversed linked list + rest
         
     }
 };
