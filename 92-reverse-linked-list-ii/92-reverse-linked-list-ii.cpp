@@ -9,32 +9,27 @@
  * };
  */
 class Solution {
-    
+public:
     ListNode* reverse(ListNode* head){
         
+        ListNode* curr=head;
         ListNode* prev=NULL;
         ListNode* next=NULL;
-        ListNode* curr=head;
         
         while(curr!=NULL){
-           next=curr->next;
-           curr->next=prev;
-           prev=curr;
-           curr=next;
+            next=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=next;
         }
         return prev;
     }
-public:
+    
     ListNode* reverseBetween(ListNode* head, int left, int right) {
         
-        //if(head==NULL || head->next==NULL || left==right)return head;
-        if(head==NULL)return head;
-        ListNode* slow=head;
         ListNode* prev=NULL;
         ListNode* curr=head;
-        
         int c=1;
-        
         while(c<left){
             prev=curr;
             curr=curr->next;
@@ -47,26 +42,22 @@ public:
             c++;
         }
         
-        ListNode* temp=curr->next;
+        ListNode* rest=curr->next;
         curr->next=NULL;
-        
         ListNode* rev=reverse(start);
+        
         if(prev!=NULL)prev->next=rev;
         
         curr=rev;
-        
-        while(curr->next!=NULL){
-            curr=curr->next;
+        while(rev->next!=NULL){
+            rev=rev->next;
         }
         
-        curr->next=temp;
+        rev->next=rest;
         
-        if(left == 1){
-            return rev;
-        }
-        else{
-            return head;
-        }
+        if(left==1)return curr;
+        
         return head;
+        
     }
 };
