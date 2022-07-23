@@ -2,6 +2,7 @@ class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
         
+        //kadane's Alogorithm
         int max_sum=INT_MIN;
         int sum=0;
         
