@@ -1,1 +1,1 @@
-# <a href="https://practice.geeksforgeeks.org/problems/remove-duplicates-from-an-unsorted-linked-list/1">Ques Link</a>
+# <a href="https://practice.geeksforgeeks.org/problems/max-min/1">Ques Link</a>
