@@ -6,9 +6,9 @@ class Solution{
 	vector<int> downwardDigonal(int n, vector<vector<int>> A)
 	{
 		// Your code goes here
-		int t=2*n-1;
+		int t=2*(n-1);
 		
-		vector<vector<int>>v(t);
+		vector<vector<int>>v(t+1);
 		
 		for(int i=0;i<n;i++){
 		    for(int j=0;j<n;j++){
@@ -18,10 +18,11 @@ class Solution{
 		
 		vector<int>ans;
 		for(int i=0;i<v.size();i++){
-		    for(int j=0;j<v[0].size();j++){
+		    for(int j=0;j<v[i].size();j++){
 		        ans.push_back(v[i][j]);
 		    }
 		}
 		
 		return ans;
 	}
+
